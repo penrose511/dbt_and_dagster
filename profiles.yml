@@ -1,5 +1,5 @@
-default:
-  target: prod  # Set the target environment to prod
+dbt_profiles:
+  target: default  # Set the target environment to prod
   outputs:
     default:  # Connection details for your dev environment
       type: snowflake
