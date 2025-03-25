@@ -1,19 +1,7 @@
-dbt_profiles:
-  target: default  # Set the target environment to prod
+default:
+  target: prod  # Use the 'prod' environment by default
   outputs:
-    default:  # Connection details for your dev environment
-      type: snowflake
-      account: "{{ env_var('SNOWFLAKE_ACCOUNT_DEV') }}"
-      user: "{{ env_var('SNOWFLAKE_USER_DEV') }}"
-      password: "{{ env_var('SNOWFLAKE_PASSWORD_DEV') }}"
-      role: "{{ env_var('SNOWFLAKE_ROLE_DEV') }}"
-      database: "{{ env_var('SNOWFLAKE_DATABASE_DEV') }}"
-      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE_DEV') }}"
-      schema: "{{ env_var('SNOWFLAKE_SCHEMA_DEV') }}"
-      threads: 1
-      client_session_keep_alive: False
-      query_tag: dbt
-    dev:  # Connection details for your dev environment
+    dev:
       type: snowflake
       account: "{{ env_var('SNOWFLAKE_ACCOUNT_DEV') }}"
       user: "{{ env_var('SNOWFLAKE_USER_DEV') }}"
@@ -34,6 +22,6 @@ dbt_profiles:
       database: "{{ env_var('SNOWFLAKE_DATABASE_PROD') }}"
       warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE_PROD') }}"
       schema: "{{ env_var('SNOWFLAKE_SCHEMA_PROD') }}"
-      threads: 4  # You might want to adjust the number of threads for production
+      threads: 4
       client_session_keep_alive: False
       query_tag: dbt
