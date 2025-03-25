@@ -1,0 +1,6 @@
+locations:
+- build:
+    directory: ./dbt_and_dagster
+  code_source:
+    module_name: dbt_and_dagster.definitions
+  location_name: dbt_and_dagster
