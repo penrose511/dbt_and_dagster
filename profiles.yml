@@ -1,4 +1,4 @@
-dbt_profiles:
+default:
   target: prod  # Set the target environment to prod
   outputs:
     default:  # Connection details for your dev environment
